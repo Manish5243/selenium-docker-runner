@@ -14,11 +14,11 @@ pipeline {
                 bat "docker-compose up testng-module"
             }
         }
-        stage('Grid down') {
-            steps {
-                //sh
-                bat "docker-compose down"
-            }
+    }
+    post{
+        always{
+            archiveArtifacts artifacts: 'target/output/**'
+            bat "docker-compose down"
         }
     }
 }
