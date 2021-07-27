@@ -25,4 +25,4 @@ services:
             - HUB_HOST=hub
             - MODULE=testng.xml
         volumes:
-            - ./target/output-result:/usr/share/udemy/test-output
+            - ./target/output/output-result:/usr/share/udemy/test-output
